@@ -36,6 +36,8 @@ class Organization {
     private String orgName;
     private String region;
 
+    public Organization() {}
+
     public Organization(String orgName, String region) {
         this.orgName = orgName;
         this.region = region;
@@ -55,7 +57,30 @@ class Organization {
 
     public String getRegion() {
         return region;
-     }
+    }
 }
 
+@Configuration
+class ProjectConfig {
+    @Bean
+    public Esportsman esportsman() {
+        var es = new Esportsman();
+        es.setName("m0nesy");
+        es.setRole("AWPer");
+        return es;
+    }
 
+    @Bean
+    public Organization organization() {
+        var org = new Organization();
+        org.setOrgName("G2");
+        org.setRegion("Europe");
+        return org;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+    }
+}
