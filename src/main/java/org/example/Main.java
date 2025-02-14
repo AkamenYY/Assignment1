@@ -55,7 +55,7 @@ class Organization {
 
     public String getRegion() {
         return region;
-    }
+     }
 }
 
 
