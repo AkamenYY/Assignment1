@@ -81,6 +81,14 @@ class ProjectConfig {
 
 public class Main {
     public static void main(String[] args) {
-        
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ProjectConfig.class);
+
+        Esportsman es = context.getBean(Esportsman.class);
+        Organization org = context.getBean(Organization.class);
+
+        System.out.println("Esportsman: " + es.getName() + ", Role: " + es.getRole());
+        System.out.println("Organization: " + org.getOrgName() + ", Region: " + org.getRegion());
+
+        context.close();
     }
 }
